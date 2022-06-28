@@ -376,14 +376,14 @@ def make_gradcam_heatmap(img_array, model, last_conv_layer_name, pred_index=None
     # with respect to the activations of the last conv layer
     with tf.GradientTape() as tape:
         last_conv_layer_output, preds = grad_model(img_array)
-        print(preds)
-        print(preds[0])
-        print(preds[0].shape)
-        preds = tf.squeeze(preds[0])
-        print(preds.shape)
+        #print(preds)
+        #print(preds[0])
+        #print(preds[0].shape)
+        #preds = tf.squeeze(preds[0])
+        #print(preds.shape)
         if pred_index is None:
             pred_index = tf.argmax(preds[0])
-        print(pred_index)
+        #print(pred_index)
         class_channel = preds[:, pred_index]
 
     # This is the gradient of the output neuron (top predicted or chosen)
